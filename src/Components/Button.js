@@ -1,14 +1,20 @@
 // Button.js
 import React, { useState, useEffect } from 'react';
+import correctAnswerSound from '../Audio/correct-answer.wav';
 
 const Button = ({ name, correctAnswer, handleAnswer, setAnswerCorrect }) => {
   const [isSelected, setSelected] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
 
+  const correctAnswerAudio = new Audio(correctAnswerSound); // Create an audio element
+
   useEffect(() => {
     if (isSelected) {
+      setSelected(true);
       const isCorrectAnswer = name === correctAnswer;
       setIsCorrect(isCorrectAnswer);
+      correctAnswerAudio.play();
+
       setTimeout(() => {
         handleAnswer(isCorrectAnswer);
         setAnswerCorrect(isCorrectAnswer);
@@ -19,6 +25,7 @@ const Button = ({ name, correctAnswer, handleAnswer, setAnswerCorrect }) => {
 
   const handleClick = () => {
     setSelected(true);
+
   };
 
   const buttonClass = `bg-gray-900 text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-blue-700 ${

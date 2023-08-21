@@ -1,37 +1,49 @@
+// Timer.js
 import React, { useEffect, useState } from 'react';
-
-
-/*
-The useEffect hook is used to start the timer and update the secondsLeft state every second. 
-It also handles the cleanup by clearing the interval when the component unmounts.
-
-In the useEffect hook, an interval is set up using setInterval if there are seconds left on the timer. 
-It decrements the secondsLeft state by 1 every second until it reaches 0.
-
-
-*/
+import countdown from '../Audio/countdown.wav';
 
 const Timer = ({ setGameOver, gameOver }) => {
-    const [secondsLeft, setSecondsLeft] = useState(30);
-  
-    useEffect(() => {
-      let intervalId = null;
-  
-      if (secondsLeft > 0 && !gameOver) {
-        intervalId = setInterval(() => {
-          setSecondsLeft((prevSeconds) => prevSeconds - 1);
-        }, 1000);
-      } else {
-        clearInterval(intervalId);
-        setGameOver(true);
-      }
-  
-      return () => {
-        clearInterval(intervalId);
-      };
-    }, [secondsLeft, gameOver]);
-  
-    return <div className="flex text-1xl justify-center p-4 font-mono">{secondsLeft}</div>;
-  };
-  
-  export default Timer;
+  const [secondsLeft, setSecondsLeft] = useState(30);
+  const countdownTime = new Audio(countdown);
+
+  useEffect(() => {
+    let intervalId = null;
+
+    if (secondsLeft <= 6) {
+      countdownTime.play();
+    }
+
+    if (secondsLeft > 0 && !gameOver) {
+      intervalId = setInterval(() => {
+        setSecondsLeft((prevSeconds) => prevSeconds - 1);
+      }, 1000);
+    } else {
+      clearInterval(intervalId);
+      setGameOver(true);
+    }
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [secondsLeft, gameOver]);
+
+  const progress = (secondsLeft / 30) * 100;
+
+  return (
+    <div>
+      <div className='flex flex-col items-center space-y-4'>
+        <div className='relative w-32 h-4 bg-gray-300'>
+          <div
+            className='absolute top-0 left-0 h-full bg-blue-500'
+            style={{ width: `${progress}%` }}
+          ></div>
+        </div>
+      </div>
+      <div className='flex text-1xl justify-center p-4 font-mono'>
+        {secondsLeft}
+      </div>
+    </div>
+  );
+};
+
+export default Timer;

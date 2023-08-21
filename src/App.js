@@ -6,6 +6,7 @@ import Question from './Components/Question';
 import Timer from './Components/Timer';
 import Homepage from './Pages/Homepage';
 import Score from './Components/Score';
+import Game from './Pages/Game';
 
 const App = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -35,24 +36,36 @@ const App = () => {
 
   const handleStartGame = (league) => {
     setSelectedLeague(league);
+    return <Game/>
   };
 
   const renderGame = () => {
     if (!selectedLeague) {
-      return <Homepage setGameStarted={handleStartGame} />;
+      return <Homepage setGameStarted={handleStartGame}/>;
+      console.log("Hi")
     }
 
     if (gameOver) {
       return (
-        <div className="flex flex-col items-center">
-          <h2 className="text-3xl p-5">Game Over!</h2>
-          <p className="text-3xl p-5">You scored: {score}</p>
+        <div className="flex flex-col items-center font-mono">
+          <h2 className="text-3xl p-5">Time is up!</h2>
+          <p className="text-3xl p-5 align-center">You scored:</p>
+          <p className="text-3xl p-5 align-center">{score}</p>
+          <div className='pt-10 flex flex-col items-center p-4 '>
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-blue-600"
+            className="bg-gray-800 text-white px-4 py-2 mb-3 rounded transition-colors duration-300 hover:bg-blue-600 w-32"
             onClick={restartGame}
           >
-            Try again
+            Restart
           </button>
+          
+          <button
+            className="bg-gray-800 text-white px-4 py-2  mb-3 rounded transition-colors duration-300 hover:bg-blue-600 w-32"
+            onClick={restartGame}
+          >
+            Home
+          </button>
+          </div>
         </div>
       );
     }
