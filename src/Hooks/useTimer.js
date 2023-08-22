@@ -1,6 +1,9 @@
+// useTimer.js
 import { useEffect, useState } from 'react';
 
+// Custom hook for a countdown timer
 const useTimer = (initialSeconds, gameOverCallback) => {
+  // State to keep track of the remaining seconds
   const [secondsLeft, setSecondsLeft] = useState(initialSeconds);
 
   // The useEffect hook is used to start the timer and update the secondsLeft state every second.
