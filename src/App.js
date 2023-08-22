@@ -81,6 +81,15 @@ const App = () => {
 
     return (
       <div>
+        <header className='bg-gray-100 text-white p-4 flex justify-between items-center'>
+  <div>
+  </div>
+  <nav>
+    <ul className='flex items-center space-x-4'>
+    </ul>
+  </nav>
+</header>
+
         {/* Wrap your renderGame content with GameProvider */}
         <GameProvider>
           {/* Pass down the currentQuestionIndex and score as props */}
@@ -100,6 +109,7 @@ const App = () => {
           <Score score={score} />
           <Timer setGameOver={setGameOver} gameOver={gameOver} />
         </GameProvider>
+        
       </div>
     );
   };

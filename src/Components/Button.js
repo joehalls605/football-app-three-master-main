@@ -13,7 +13,9 @@ const Button = ({ name, correctAnswer, handleAnswer, setAnswerCorrect }) => {
       setSelected(true);
       const isCorrectAnswer = name === correctAnswer;
       setIsCorrect(isCorrectAnswer);
-      correctAnswerAudio.play();
+      if(isCorrectAnswer){
+        correctAnswerAudio.play();
+      }
 
       setTimeout(() => {
         handleAnswer(isCorrectAnswer);
@@ -28,7 +30,7 @@ const Button = ({ name, correctAnswer, handleAnswer, setAnswerCorrect }) => {
 
   };
 
-  const buttonClass = `bg-gray-900 text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-blue-700 ${
+  const buttonClass = `bg-gray-900 text-xl text-white px-4 py-2 rounded transition-colors duration-300 hover:bg-blue-700 ${
     isSelected ? (isCorrect ? 'bg-green-500' : 'bg-red-500') : ''
   }`;
 

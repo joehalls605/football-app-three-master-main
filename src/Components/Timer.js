@@ -10,7 +10,7 @@ const Timer = ({ setGameOver, gameOver }) => {
     let intervalId = null;
 
     if (secondsLeft <= 6) {
-      countdownTime.play();
+      // countdownTime.play();
     }
 
     if (secondsLeft > 0 && !gameOver) {
@@ -32,15 +32,15 @@ const Timer = ({ setGameOver, gameOver }) => {
   return (
     <div>
       <div className='flex flex-col items-center space-y-4'>
-        <div className='relative w-32 h-4 bg-gray-300'>
+        <div className='relative w-28 h-1 bg-gray-300'>
           <div
             className='absolute top-0 left-0 h-full bg-blue-500'
             style={{ width: `${progress}%` }}
           ></div>
         </div>
       </div>
-      <div className='flex text-1xl justify-center p-4 font-mono'>
-        {secondsLeft}
+      <div className='flex text-md justify-center p-4 font-mono'>
+        {/* {secondsLeft} */}
       </div>
     </div>
   );
