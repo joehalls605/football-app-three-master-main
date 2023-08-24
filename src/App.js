@@ -14,6 +14,7 @@ const App = () => {
   const [gameOver, setGameOver] = useState(false);
   const [selectedLeague, setSelectedLeague] = useState('');
   const [answerCorrect, setAnswerCorrect] = useState(false);
+  const [scoreVisible, setScoreVisible] = useState(false);
 
   // Function to handle user's answer to a question
   const handleAnswer = (isCorrect) => {
@@ -28,13 +29,22 @@ const App = () => {
     setCurrentQuestionIndex(0);
     setScore(0);
     setGameOver(false);
-    setSelectedLeague(''); // Reset selectedLeague when restarting the game
-    setAnswerCorrect(false); // Reset answerCorrect when restarting the game
+    setAnswerCorrect(false); 
+    // Reset answerCorrect when restarting the game
   };
+
+  const handleMainMenu = () => {
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setGameOver(false);
+    setAnswerCorrect(false); 
+    setSelectedLeague('');
+  }
 
   // Function called when the timer finishes
   const handleTimerFinish = () => {
     setGameOver(true);
+    setScoreVisible(true);
   };
 
   // Function to start the game with a selected league
@@ -54,7 +64,7 @@ const App = () => {
     // Show end-game screen if the game is over
     if (gameOver) {
       return (
-        <div>
+        <div className={`flex flex-col items-center ${scoreVisible ? 'fade-in': 'fade-out'}`}>
           {/* Header for the end-game screen */}
           <header className='bg-gray-900 text-white p-4 flex justify-between items-center'>
             <div>
@@ -81,7 +91,7 @@ const App = () => {
               </button>
               <button
                 className="bg-gray-800 text-white px-4 py-2  mb-3 rounded transition-colors duration-300 hover:bg-blue-600 w-32"
-                onClick={restartGame}
+                onClick={handleMainMenu}
               >
                 Main Menu
               </button>
@@ -105,14 +115,14 @@ const App = () => {
 
     return (
       <div>
-        {/* Header for the main game */}
         <header className='bg-gray-100 text-white p-4 flex justify-between items-center'>
+         
           <div>
-            {/* Content for the header */}
+        <button className='text-sm bg-gray-100 text-black px-4 py-2 rounded mx-2 font-semibold font-mono' onClick={handleMainMenu}>Quit</button>
+
           </div>
           <nav>
             <ul className='flex items-center space-x-4'>
-              {/* Content for the navigation */}
             </ul>
           </nav>
         </header>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import countdown from '../Audio/countdown.wav';
 
 const Timer = ({ setGameOver, gameOver }) => {
-  const [secondsLeft, setSecondsLeft] = useState(30);
+  const [secondsLeft, setSecondsLeft] = useState(5);
   const countdownTime = new Audio(countdown);
 
   useEffect(() => {

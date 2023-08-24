@@ -27,17 +27,25 @@ const footballersData = [
   { _id: '25', name: 'Rice', nationality: 'England', position: 'Midfielder', league: 'Premier League', club: 'Arsenal'},
   { _id: '26', name: 'Van Dijk', nationality: 'Netherlands', position: 'Defender', league: 'Premier League', club: 'Liverpool'},
   { _id: '27', name: 'Mac Allister', nationality: 'Argentina', position: 'Midfielder', league: 'Premier League', club: 'Liverpool'},
+  { _id: '28', name: 'Eriksen', nationality: 'Denmark', position: 'Midfielder', league: 'Premier League', club: 'Manchester United'},
+  
+  { _id: '29', name: 'Baggott', nationality: 'B', club: 'Ipswich', height: '178 cm', position: 'Defender', league: 'Championship' },
+  { _id: '29', name: 'Chaplin', nationality: 'C', club: 'Ipswich', height: '178 cm', position: 'Midfielder', league: 'Championship' },
+  { _id: '29', name: 'Morsy', nationality: 'M', club: 'Ipswich', height: '178 cm', position: 'Midfielder', league: 'Championship' },
+  { _id: '29', name: 'Broadhead', nationality: 'B', club: 'Ipswich', height: '178 cm', position: 'Forward', league: 'Championship' },
+  { _id: '29', name: 'Burns', nationality: 'B', club: 'Ipswich', height: '178 cm', position: 'Forward', league: 'Championship' },
+  { _id: '29', name: 'Clarke', nationality: 'C', club: 'Ipswich', height: '178 cm', position: 'Defender', league: 'Championship' },
+  { _id: '29', name: 'Davis', nationality: 'D', club: 'Ipswich', height: '178 cm', position: 'Defender', league: 'Championship' },
+  { _id: '29', name: 'Walton', nationality: 'W', club: 'Ipswich', height: '178 cm', position: 'Goalkeeper', league: 'Championship' },
+  { _id: '29', name: 'Aluko', nationality: 'A', club: 'Ipswich', height: '178 cm', position: 'Forward', league: 'Championship' },
+  { _id: '29', name: 'Harness', nationality: 'H', club: 'Ipswich', height: '178 cm', position: 'Midfielder', league: 'Championship' },
+  { _id: '29', name: 'Edwards', nationality: 'E', club: 'Ipswich', height: '178 cm', position: 'Defender', league: 'Championship' },
+
+
+
+
 
   
-  // { _id: '19', name: 'Max Aarons', nationality: 'England', club: 'Norwich City', height: '178 cm', position: 'Defender', league: 'Championship' },
-  // { _id: '20', name: 'Ché Adams', nationality: 'Scotland', club: 'Southampton FC', height: '179 cm', position: 'Forward', league: 'Championship' },
-  // { _id: '21', name: 'Ebou Adams', nationality: 'Gambia', club: 'Cardiff City', height: '178 cm', position: 'Midfielder', league: 'Championship' },
-  // { _id: '22', name: 'Tyler Adams', nationality: 'United States', club: 'Leeds United', height: '175 cm', position: 'Midfielder', league: 'Championship' },
-  // { _id: '23', name: 'Albert Adomah', nationality: 'Ghana', club: 'Queens Park Rangers', height: '185 cm', position: 'Midfielder', league: 'Championship' },
-  // { _id: '24', name: 'Edwin Agbaje', nationality: 'Nigeria', club: 'Ipswich Town', height: '???', position: 'Forward', league: 'Championship' },
-  // { _id: '25', name: 'Tyrell Agyemang', nationality: 'England', club: 'Middlesbrough FC', height: '183 cm', position: 'Midfielder', league: 'Championship' },
-  // { _id: '26', name: 'Semi Ajayi', nationality: 'Nigeria', club: 'West Bromwich Albion', height: '193 cm', position: 'Defender', league: 'Championship' },
-  // Add more data objects with nationalities...
 ];
 
 export default footballersData;

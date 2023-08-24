@@ -29,16 +29,15 @@ const Homepage = ({ setGameStarted }) => {
         <div className='flex space-x-4'>
 
           {/* Button for Premier League */}
-          <button onClick={() => handleStartGame('Premier League')} className='bg-blue-500 font-mono  text-white px-5 py-2 rounded transition-colors duration-300 hover:bg-blue-600 my-2'>
-            Premier League
-            <img src='/public/Images/Premier.png'/>
-          </button>
+          <button onClick={() => handleStartGame('Premier League')} className='bg-blue-500 font-mono text-white px-5 py-2 rounded transition-colors duration-300 hover:bg-blue-600 my-2'>
+  Premier League
+  <img src='./public/Images/Premier.png' alt='Premier League' />
+</button>
 
-          {/* Button for Championship */}
-          <button onClick={() => handleStartGame('Championship')} className='bg-blue-500 font-mono text-white px-5 py-2 rounded transition-colors duration-300 hover:bg-blue-600 my-2'>
-            Championship
-            <img src='/public/Images/championship.png' />
-          </button>
+<button onClick={() => handleStartGame('Championship')} className='bg-blue-500 font-mono text-white px-5 py-2 rounded transition-colors duration-300 hover:bg-blue-600 my-2'>
+  Ipswich
+  <img src='./public/Images/championship.png' alt='Championship' />
+</button>
         </div>
       </main>
 

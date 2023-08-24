@@ -52,6 +52,18 @@
   animation: popUpAnimation 1s;
 }
 
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+
 @keyframes popUpAnimation {
   0% {
     transform: translate(-50%, -50%) scale(0.8);
@@ -64,5 +76,9 @@
     transform: translate(-50%, -50%) scale(1.2);
     opacity: 0;
   }
+
+  
 }
+
+
 
